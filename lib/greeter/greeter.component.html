@@ -1,0 +1,10 @@
+<md-card>
+  <md-card-title>
+    <md-toolbar color="primary">Greetings, {{name || 'Unknown'}}!</md-toolbar>
+  </md-card-title>
+  <md-card-content>
+    <md-input-container>
+      <input mdInput placeholder="Give the name" [(ngModel)]="name">
+    </md-input-container>
+  </md-card-content>
+</md-card>
