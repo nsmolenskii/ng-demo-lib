@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { GreeterModule } from '../../greeter';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -8,6 +9,9 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        GreeterModule
+      ]
     }).compileComponents();
   }));
 
@@ -17,16 +21,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'demo works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('demo works!');
-  }));
-
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('demo works!');
+    expect(compiled.querySelector('demo-greeter').textContent).toContain('Greetings, John Doe!');
   }));
 });
